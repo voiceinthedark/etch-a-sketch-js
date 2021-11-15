@@ -108,6 +108,7 @@ range.addEventListener('change', (e) => {
 colorPicker.addEventListener('change', (e) => {
     // console.log(e.target.value);
     color = e.target.value;
+    randomColorFlag = incrementalColorFlag = false;
 });
 
 /**
