@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-sketch</title>
     <script src="./scripts/script.js" defer></script>
     <link rel="stylesheet" href="./styles/style.css" />
-</head>
-<body>
-    <main id="container">
-        <header>
-            <h1>Etch-a-sketch</h1>
-        </header>
-        <div class="stage">
-            <div class="controller">
-                <p>Controller goes here</p>
+  </head>
+  <body>
+      <main id="container">
+          <header>
+              <h1>Etch-a-sketch</h1>
+            </header>
+            <div class="stage">
+                <div class="controller">
+                    <label for="grid-size">
+                        Grid Size:
+                        <input id="grid-size" type="range" min="16" max="100" step="1"  />
+                    </label>
+                    <div class="range-output">16x16</div>
             </div>
-            <div class="canvas">
-                
-            </div>
-
+            <div class="canvas"></div>
         </div>
-    </main>    
-</body>
+    </main>
+  </body>
 </html>

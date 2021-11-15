@@ -43,7 +43,7 @@ header > h1 {
 }
 
 .stage .controller {
-    flex: 1 0 0%;
+    flex: 1 0 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,7 +52,7 @@ header > h1 {
     border: 1px solid white;
     padding: 16px;
     margin-right: 180px;
-    margin-left: auto;
+    margin-left: 18px;
 
 }
 
@@ -73,4 +73,18 @@ header > h1 {
 .grid-cell {
     /* border: 1px dotted black; */
     background-color: white;
+}
+
+.range-output{
+    font-size: 14px;
+    background-color: rgb(70, 153, 248);
+    width: auto;
+    height: auto;
+    position: fixed;        
+    /*On top and hidden*/
+    z-index: 1;
+    display: none;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
 }
