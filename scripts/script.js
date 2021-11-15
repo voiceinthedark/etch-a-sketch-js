@@ -2,8 +2,11 @@ const canvas = document.querySelector('.canvas');
 const cells = document.querySelectorAll('.grid-cell');
 const range = document.querySelector('#grid-size');
 const rangeOutput = document.querySelector('.range-output');
+const colorPicker = document.querySelector('#color-picker');
+let color = '#000';
 const ROWS = 32;
 const COLS = 32;
+// let color = document.styleSheets.item("--color-paint")
 
 /**
  * Helper function to remove all child nodes
@@ -24,8 +27,7 @@ function makeCanvas(rows, cols) {
         const cell = document.createElement('div');
         cell.classList.add('grid-cell');
         cell.addEventListener("mouseover", (e) => {
-          e.target.style.setProperty('background-color', 'black');
-        //   console.log(e.target);
+          e.target.style.setProperty('background-color', color);
         });
         canvas.appendChild(cell);
     }
@@ -62,6 +64,11 @@ range.addEventListener('input', (e) => {
 
 range.addEventListener('change', (e) => {
     makeCanvas(e.target.value, e.target.value);    
+});
+
+colorPicker.addEventListener('change', (e) => {
+    // console.log(e.target.value);
+    color = e.target.value;
 })
 
 
