@@ -4,6 +4,7 @@ const range = document.querySelector('#grid-size');
 const rangeOutput = document.querySelector('.range-output');
 const colorPicker = document.querySelector('#color-picker');
 const rainbowColorButton = document.querySelector('#incremental-color');
+const randomColorButton = document.querySelector('#random-color');
 let color = '#000';
 let incrementalColor = {
     r: 255,
@@ -11,6 +12,7 @@ let incrementalColor = {
     b: 0,
 };
 let incrementalColorFlag = false;
+let randomColorFlag = false;
 const ROWS = 32;
 const COLS = 32;
 
@@ -45,10 +47,20 @@ function makeCanvas(rows, cols) {
         cell.classList.add('grid-cell');
         cell.addEventListener("mouseover", (e) => {
             if (incrementalColorFlag) {
+                randomColorFlag = false;
               color = rgb(incrementalColor.r, incrementalColor.g, incrementalColor.b);
               incrementalColor.r = (incrementalColor.r + 151) % 255;
               incrementalColor.g = (incrementalColor.g + 102) % 255;
               incrementalColor.b = (incrementalColor.b + 51) % 255;
+            //   console.log(color);
+            } else if(randomColorFlag){
+                
+                color = rgb(
+                  Math.floor(Math.random() * 255),
+                  Math.floor(Math.random() * 255),
+                  Math.floor(Math.random() * 255)
+                );
+                // console.log(color);
             }
           e.target.style.setProperty('background-color', color);
         });
@@ -104,7 +116,16 @@ colorPicker.addEventListener('change', (e) => {
 
 rainbowColorButton.addEventListener('click', (e) => {
     incrementalColorFlag = !incrementalColorFlag;   
-    console.log(incrementalColorFlag); 
+    // console.log(incrementalColorFlag); 
+    randomColorFlag = false;
 });
 
+/**
+ * Random color button methods
+ */
+
+randomColorButton.addEventListener('click', (e) => {
+    randomColorFlag = !randomColorFlag;
+    incrementalColorFlag = false;
+})
 
