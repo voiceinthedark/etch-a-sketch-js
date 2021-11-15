@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --grid-columns: 1;
+    --grid-rows: 1;
+    --background-color: rgb(17, 47, 47);
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    margin-bottom: 8px;
+}
+
+header > h1 {
+    font-size: 64px;
+}
+
+.stage {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.stage .controller {
+    flex: 0 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 150px;
+    border: 1px solid white;
+    padding: 16px;
+    margin-right: 180px;
+    margin-left: auto;
+
+}
+
+.stage .canvas {
+    flex: 1;
+    margin-right: auto;
+    border: 1px solid white;
+    min-width: 480px;
+    min-height: 400px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+}
+
+.grid-cell {
+    border: 1px dotted black;
+    background-color: white;
+}
