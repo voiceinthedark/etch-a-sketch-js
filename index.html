@@ -15,14 +15,30 @@
       </header>
       <div class="stage">
         <div class="controller">
-          <label for="color-picker">
-            <input type="color" id="color-picker" name='color-picker' />
-          </label>
+            <input type="color" id="color-picker" name="color-picker" />
+          
           <label for="grid-size">
             Grid Size:
-            <input id="grid-size" name="grid-size" type="range" min="16" max="100" step="1" />
+            <input
+              id="grid-size"
+              name="grid-size"
+              type="range"
+              min="16"
+              max="100"
+              step="1"
+              value="16"
+            />
           </label>
           <div class="range-output">16x16</div>
+          <label for="incremental-color">
+              Rainbow:
+            <input
+              type="button"
+              id="incremental-color"
+              name="incremental-color"
+              value="Incremental"
+            />
+          </label>
         </div>
         <div class="canvas"></div>
       </div>
