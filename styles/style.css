@@ -43,12 +43,12 @@ header > h1 {
 }
 
 .stage .controller {
-    flex: 0 1 0%;
+    flex: 1 0 0%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    max-width: 150px;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 150px; */
     border: 1px solid white;
     padding: 16px;
     margin-right: 180px;
@@ -57,18 +57,20 @@ header > h1 {
 }
 
 .stage .canvas {
-    flex: 1;
+    flex: 2 1 auto;
     margin-right: auto;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     min-width: 480px;
-    min-height: 400px;
+    min-height: 440px;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
+    box-shadow: 2px 2px 5px black,
+                -2px -2px 5px black;
 }
 
 .grid-cell {
-    border: 1px dotted black;
+    /* border: 1px dotted black; */
     background-color: white;
 }
